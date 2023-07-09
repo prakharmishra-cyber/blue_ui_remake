@@ -1,0 +1,25 @@
+{
+  "short_name": "Windharvester",
+  "name": "Web based Application",
+  "icons": [
+    {
+      "src": "logo_wiki.png",
+      "sizes": "200x54",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo_wiki.png",
+      "type": "image/png",
+      "sizes": "200x54"
+    },
+    {
+      "src": "logo_wiki.png",
+      "type": "image/png",
+      "sizes": "200x54"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
