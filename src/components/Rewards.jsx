@@ -33,7 +33,7 @@ const Rewards = () => {
         const response = await axios.post(`${BASE_URL}/invite_rewards`, {
             user_id: localStorage.getItem('uid')
         }).then(({ data }) => { setIsloading(false); return data });
-        //console.log(response);
+        console.log(response);
         setReward1_details(response);
     }
 

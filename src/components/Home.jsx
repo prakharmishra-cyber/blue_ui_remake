@@ -58,7 +58,7 @@ import p4 from '../images/boing_space/p4.jpg';
 import p5 from '../images/boing_space/p5.jpg';
 import p6 from '../images/boing_space/p6.jpg';
 import p7 from '../images/boing_space/p7.jpg';
-
+import successful_purchase from '../images/boing_space/successful_purchase.jpg';
 
 const customStyles = {
     content: {
@@ -217,11 +217,12 @@ const Home = () => {
             {planPurchaseShow ? <div className='absolute w-[65%]  top-[450px] rounded-lg shadow-xl  z-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 <div className='flex flex-col justify-center gap-3 h-[180px] shadow-2xl border border-gray-300 items-center bg-white w-full text-vlt rounded-xl'>
                     <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-16 h-16">
+                        {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-16 h-16">
                             <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
-                        </svg>
+                        </svg> */}
+                        <img src={successful_purchase} alt="successful_purchase" className='w-auto h-[180px] rounded-lg' />
                     </div>
-                    <div className='text-2xl font-extrabold'>Successful Purchase</div>
+                    {/* <div className='text-2xl font-extrabold'>Successful Purchase</div> */}
                 </div>
             </div> : null}
 
@@ -308,61 +309,61 @@ const Home = () => {
                     <div className='grid grid-cols-1 gap-1'>
                         {userDetails && (amountDetails.plan_state[0] === 0) ? (
                             <span className='pointer-events-none'>
-                                <Card product_type={"long"} product_image={p1} handleClick={handleClick} plan_name={"Boeing Space 1"} plan_cycle={60} plan_daily_earning={45} plan_amount={300} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p1} handleClick={handleClick} plan_name={"Boeing Space 1"} plan_cycle={60} plan_daily_earning={20} plan_amount={0} plan_type={'Big Plan'} />
                             </span>
                         ) : (
                             <span>
-                                <Card product_type={"long"} product_image={p1} handleClick={handleClick} plan_name={"Boeing Space 1"} plan_cycle={60} plan_daily_earning={45} plan_amount={300} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p1} handleClick={handleClick} plan_name={"Boeing Space 1"} plan_cycle={60} plan_daily_earning={20} plan_amount={0} plan_type={'Big Plan'} />
                             </span>
                         )}
 
                         {userDetails && (amountDetails.plan_state[1] === 0) ? (
                             <span className='pointer-events-none'>
-                                <Card product_type={"long"} product_image={p2} handleClick={handleClick} plan_name={"Boeing Space 2"} plan_cycle={60} plan_daily_earning={135} plan_amount={700} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p2} handleClick={handleClick} plan_name={"Boeing Space 2"} plan_cycle={60} plan_daily_earning={110} plan_amount={480} plan_type={'Big Plan'} />
                             </span>
                         ) : (
                             <span>
-                                <Card product_type={"long"} product_image={p2} handleClick={handleClick} plan_name={"Boeing Space 2"} plan_cycle={60} plan_daily_earning={135} plan_amount={700} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p2} handleClick={handleClick} plan_name={"Boeing Space 2"} plan_cycle={60} plan_daily_earning={110} plan_amount={480} plan_type={'Big Plan'} />
                             </span>
                         )}
 
                         {userDetails && (amountDetails.plan_state[2] === 0) ? (
                             <span className='pointer-events-none'>
-                                <Card product_type={"long"} product_image={p3} handleClick={handleClick} plan_name={"Boeing Space 3"} plan_cycle={60} plan_daily_earning={270} plan_amount={1500} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p3} handleClick={handleClick} plan_name={"Boeing Space 3"} plan_cycle={60} plan_daily_earning={150} plan_amount={800} plan_type={'Big Plan'} />
                             </span>
                         ) : (
                             <span>
-                                <Card product_type={"long"} product_image={p3} handleClick={handleClick} plan_name={"Boeing Space 3"} plan_cycle={60} plan_daily_earning={270} plan_amount={1500} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p3} handleClick={handleClick} plan_name={"Boeing Space 3"} plan_cycle={60} plan_daily_earning={150} plan_amount={800} plan_type={'Big Plan'} />
                             </span>
                         )}
 
                         {userDetails && (amountDetails.plan_state[3] === 0) ? (
                             <span className='pointer-events-none'>
-                                <Card product_type={"long"} product_image={p4} handleClick={handleClick} plan_name={"Boeing Space 4"} plan_cycle={30} plan_daily_earning={605} plan_amount={3500} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p4} handleClick={handleClick} plan_name={"Boeing Space 4"} plan_cycle={30} plan_daily_earning={350} plan_amount={1800} plan_type={'Big Plan'} />
                             </span>
                         ) : (
                             <span>
-                                <Card product_type={"long"} product_image={p4} handleClick={handleClick} plan_name={"Boeing Space 4"} plan_cycle={30} plan_daily_earning={605} plan_amount={3500} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p4} handleClick={handleClick} plan_name={"Boeing Space 4"} plan_cycle={30} plan_daily_earning={350} plan_amount={1800} plan_type={'Big Plan'} />
                             </span>
                         )}
 
                         {userDetails && (amountDetails.plan_state[4] === 0) ? (
                             <span className='pointer-events-none'>
-                                <Card product_type={"long"} product_image={p5} handleClick={handleClick} plan_name={"Boeing Space 5"} plan_cycle={30} plan_daily_earning={1230} plan_amount={7000} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p5} handleClick={handleClick} plan_name={"Boeing Space 5"} plan_cycle={30} plan_daily_earning={600} plan_amount={3500} plan_type={'Big Plan'} />
                             </span>
                         ) : (
                             <span>
-                                <Card product_type={"long"} product_image={p5} handleClick={handleClick} plan_name={"Boeing Space 5"} plan_cycle={30} plan_daily_earning={1230} plan_amount={7000} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p5} handleClick={handleClick} plan_name={"Boeing Space 5"} plan_cycle={30} plan_daily_earning={600} plan_amount={3500} plan_type={'Big Plan'} />
                             </span>
                         )}
 
                         {userDetails && (amountDetails.plan_state[5] === 0) ? (
                             <span className='pointer-events-none'>
-                                <Card product_type={"long"} product_image={p6} handleClick={handleClick} plan_name={"Boeing Space 6"} plan_cycle={30} plan_daily_earning={2000} plan_amount={9500} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p6} handleClick={handleClick} plan_name={"Boeing Space 6"} plan_cycle={30} plan_daily_earning={2500} plan_amount={15000} plan_type={'Big Plan'} />
                             </span>
                         ) : (
                             <span>
-                                <Card product_type={"long"} product_image={p6} handleClick={handleClick} plan_name={"Boeing Space 6"} plan_cycle={30} plan_daily_earning={2000} plan_amount={9500} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p6} handleClick={handleClick} plan_name={"Boeing Space 6"} plan_cycle={30} plan_daily_earning={2500} plan_amount={15000} plan_type={'Big Plan'} />
                             </span>
                         )}
 

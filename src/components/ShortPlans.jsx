@@ -218,45 +218,54 @@ const ShortPlans = () => {
             {/*Plans Cards*/}
             <div className="card_grid grid grid-cols-1 sm:w-3/5 lg:w-3/5 w-[90%] mx-auto mt-2 mb-20">
 
-                
+
                 {currentVisible === 'short' && amountDetails?.plan_state && userDetails && (
                     <div className={`grid grid-cols-1 gap-1`}>
-                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[6] === 0 ) ?
+                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[6] === 0) ?
                             (
                                 <span className='pointer-events-none'>
                                     {/* <span>hi</span> */}
-                                    <Card product_type={"short"} product_image={p7} handleClick={handleClick} plan_name={"Boeing Space 7"} plan_cycle={5} plan_daily_earning={210} plan_amount={560} plan_type={'Short Plan'} />
+                                    <Card product_type={"short"} product_image={p7} handleClick={handleClick} plan_name={"Boeing Space 7"} plan_cycle={1} plan_daily_earning={130} plan_amount={110} plan_type={'Short Plan'} />
                                 </span>
                             ) :
                             <span>
-                                <Card product_type={"short"} product_image={p7} handleClick={handleClick} plan_name={"Boeing Space 7"} plan_cycle={5} plan_daily_earning={210} plan_amount={560} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={p7} handleClick={handleClick} plan_name={"Boeing Space 7"} plan_cycle={1} plan_daily_earning={130} plan_amount={110} plan_type={'Short Plan'} />
                             </span>
                         }
 
                         {(userDetails.boughtLong < 1 || amountDetails.plan_state[7] === 0) ?
                             (<span className='pointer-events-none'>
-                                <Card product_type={"short"} product_image={p2} handleClick={handleClick} plan_name={"Boeing Space 8"} plan_cycle={5} plan_daily_earning={410} plan_amount={1000} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={p2} handleClick={handleClick} plan_name={"Boeing Space 8"} plan_cycle={3} plan_daily_earning={140} plan_amount={330} plan_type={'Short Plan'} />
                             </span>) :
                             (<span className=''>
-                                <Card product_type={"short"} product_image={p2} handleClick={handleClick} plan_name={"Boeing Space 8"} plan_cycle={5} plan_daily_earning={410} plan_amount={1000} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={p2} handleClick={handleClick} plan_name={"Boeing Space 8"} plan_cycle={3} plan_daily_earning={140} plan_amount={330} plan_type={'Short Plan'} />
                             </span>
                             )}
 
-                        { (userDetails.boughtLong < 1 || amountDetails.plan_state[8] === 0) ?
+                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[8] === 0) ?
                             (<span className='pointer-events-none'>
-                                <Card product_type={"short"} product_image={p3} handleClick={handleClick} plan_name={"Boeing Space 9"} plan_cycle={5} plan_daily_earning={1000} plan_amount={2500} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={p3} handleClick={handleClick} plan_name={"Boeing Space 9"} plan_cycle={4} plan_daily_earning={360} plan_amount={1160} plan_type={'Short Plan'} />
                             </span>) :
                             (<span className=''>
-                                <Card product_type={"short"} product_image={p3} handleClick={handleClick} plan_name={"Boeing Space 9"} plan_cycle={5} plan_daily_earning={1000} plan_amount={2500} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={p3} handleClick={handleClick} plan_name={"Boeing Space 9"} plan_cycle={4} plan_daily_earning={360} plan_amount={1160} plan_type={'Short Plan'} />
                             </span>
                             )}
 
                         {(userDetails.boughtLong < 1 || amountDetails.plan_state[9] === 0) ?
                             (<span className='pointer-events-none'>
-                                <Card product_type={"short"} product_image={p4} handleClick={handleClick} plan_name={"Boeing Space 10"} plan_cycle={5} plan_daily_earning={4000} plan_amount={7000} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={p4} handleClick={handleClick} plan_name={"Boeing Space 10"} plan_cycle={4} plan_daily_earning={810} plan_amount={2800} plan_type={'Short Plan'} />
                             </span>) :
                             (<span className=''>
-                                <Card product_type={"short"} product_image={p4} handleClick={handleClick} plan_name={"Boeing Space 10"} plan_cycle={5} plan_daily_earning={4000} plan_amount={7000} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={p4} handleClick={handleClick} plan_name={"Boeing Space 10"} plan_cycle={4} plan_daily_earning={810} plan_amount={2800} plan_type={'Short Plan'} />
+                            </span>
+                            )}
+
+                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[10] === 0) ?
+                            (<span className='pointer-events-none'>
+                                <Card product_type={"short"} product_image={p5} handleClick={handleClick} plan_name={"Boeing Space 11"} plan_cycle={4} plan_daily_earning={3000} plan_amount={8500} plan_type={'Short Plan'} />
+                            </span>) :
+                            (<span className=''>
+                                <Card product_type={"short"} product_image={p5} handleClick={handleClick} plan_name={"Boeing Space 11"} plan_cycle={4} plan_daily_earning={3000} plan_amount={8500} plan_type={'Short Plan'} />
                             </span>
                             )}
 

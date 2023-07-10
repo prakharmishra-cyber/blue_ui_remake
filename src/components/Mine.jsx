@@ -159,7 +159,7 @@ const Mine = () => {
 
         <div className="box mb-20 gap-1 flex flex-col text-gray-500 font-semibold bg-[#fafff9] rounded-xl  shadow-xl m-3 border border-gray-300">
 
-          {/* <div className=' cursor-pointer flex justify-between p-2 items-center' onClick={() => navigate('/rewards')}>
+          <div className=' cursor-pointer flex justify-between p-2 items-center' onClick={() => navigate('/rewards')}>
             <div className='flex gap-2 items-center px-1'>
               <div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 fill-vlt">
@@ -174,7 +174,7 @@ const Mine = () => {
                 <path fillRule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" clipRule="evenodd" />
               </svg>
             </div>
-          </div> */}
+          </div>
 
           <div className=' cursor-pointer flex justify-between p-2 items-center' onClick={() => navigate('/team')}>
             <div className='flex gap-2 items-center px-1'>
