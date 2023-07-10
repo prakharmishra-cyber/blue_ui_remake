@@ -15,6 +15,7 @@ import amaz_logi from '../images/amaz_logi.png';
 import windharvester_logo from '../images/windharvester_logo.png';
 import wind_login from '../images/wind_login.jpg'
 import logo_wiki from '../images/assets/logo.png';
+import boeing_logo from '../images/boing_space/boeing_logo.png';
 
 const Login = () => {
 
@@ -38,7 +39,8 @@ const Login = () => {
 
 
     useEffect(() => {
-        document.body.style.backgroundColor = "#000084";
+        //#000084
+        document.body.style.backgroundColor = "white";
         getBlockedUsers();
     }, []);
 
@@ -83,7 +85,7 @@ const Login = () => {
     }
 
     return (
-        <div  className='relative   bg-vlt '>
+        <div  className='relative   bg-white '>
             {toasterShow?<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 <div className='flex gap-2 bg-black opacity-80 text-white px-2 py-1 rounded-md'>
                     <div>{toasterText}</div>
@@ -96,7 +98,7 @@ const Login = () => {
                 <div className='text-sm'>{text}</div>
             </div> : null}
             <div className='text-center pt-20'>
-                <img src={logo_wiki} alt="hp_logo" className='m-auto md:w-2/6 sm:w-1/6 mb-8' width={150} />
+                <img src={boeing_logo} alt="hp_logo" className='m-auto md:w-2/6 sm:w-1/6 mb-8' width={150} />
             </div>
             <div className='flex flex-col m-auto w-5/6 mt-2'>
                 <div className=" items-center justify-center mb-3 p-2 phoneno flex  bg-[#f1f1f1] rounded-full">

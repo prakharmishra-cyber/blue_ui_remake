@@ -14,7 +14,7 @@ import make_money from '../images/make_money.png';
 import dividend from '../images/dividend.png';
 import invite_bg from '../images/invite_bg.png';
 import refer from '../images/assets/refer.jpg';
-
+import invite_rewards from '../images/boing_space/invite_rewards.jpg';
 
 const Mine = () => {
 
@@ -150,11 +150,11 @@ const Mine = () => {
         </div>
 
         <div className="box   relative  shadow-xl mx-4 mt-20" onClick={()=>navigate('/invite')}>
-          <img src={refer} alt="invite_image" className='rounded-xl w-full' />
-          <div className='flex flex-col gap-5 absolute top-5 left-5 justify-around'>
+          <img src={invite_rewards} alt="invite_image" className='rounded-xl w-full h-[140px]' />
+          {/* <div className='flex flex-col gap-5 absolute top-5 left-5 justify-around'>
             <div className='text-2xl font-extrabold text-white'>Invite friends to make money</div>
             <div className='shadow-2xl px-4 text-center py-1 rounded-full font-extrabold text-white text-lg button_bg'>Implement friends right away</div>
-          </div>        
+          </div>         */}
         </div>
 
         <div className="box mb-20 gap-1 flex flex-col text-gray-500 font-semibold bg-[#fafff9] rounded-xl  shadow-xl m-3 border border-gray-300">

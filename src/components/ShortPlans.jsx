@@ -45,6 +45,14 @@ import img4 from '../images/assets/img4.jpg';
 import img5 from '../images/assets/img5.jpg';
 import img6 from '../images/assets/img6.jpg';
 
+import p1 from '../images/boing_space/p1.jpg';
+import p2 from '../images/boing_space/p2.jpg';
+import p3 from '../images/boing_space/p3.jpg';
+import p4 from '../images/boing_space/p4.jpg';
+import p5 from '../images/boing_space/p5.jpg';
+import p6 from '../images/boing_space/p6.jpg';
+import p7 from '../images/boing_space/p7.jpg';
+
 
 const customStyles = {
     content: {
@@ -217,38 +225,38 @@ const ShortPlans = () => {
                             (
                                 <span className='pointer-events-none'>
                                     {/* <span>hi</span> */}
-                                    <Card product_type={"short"} product_image={img1} handleClick={handleClick} plan_name={"Wikiwandballoon 7"} plan_cycle={5} plan_daily_earning={210} plan_amount={560} plan_type={'Short Plan'} />
+                                    <Card product_type={"short"} product_image={p7} handleClick={handleClick} plan_name={"Boeing Space 7"} plan_cycle={5} plan_daily_earning={210} plan_amount={560} plan_type={'Short Plan'} />
                                 </span>
                             ) :
                             <span>
-                                <Card product_type={"short"} product_image={img1} handleClick={handleClick} plan_name={"Wikiwandballoon 7"} plan_cycle={5} plan_daily_earning={210} plan_amount={560} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={p7} handleClick={handleClick} plan_name={"Boeing Space 7"} plan_cycle={5} plan_daily_earning={210} plan_amount={560} plan_type={'Short Plan'} />
                             </span>
                         }
 
                         {(userDetails.boughtLong < 1 || amountDetails.plan_state[7] === 0) ?
                             (<span className='pointer-events-none'>
-                                <Card product_type={"short"} product_image={img2} handleClick={handleClick} plan_name={"Wikiwandballoon 8"} plan_cycle={5} plan_daily_earning={410} plan_amount={1000} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={p2} handleClick={handleClick} plan_name={"Boeing Space 8"} plan_cycle={5} plan_daily_earning={410} plan_amount={1000} plan_type={'Short Plan'} />
                             </span>) :
                             (<span className=''>
-                                <Card product_type={"short"} product_image={img2} handleClick={handleClick} plan_name={"Wikiwandballoon 8"} plan_cycle={5} plan_daily_earning={410} plan_amount={1000} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={p2} handleClick={handleClick} plan_name={"Boeing Space 8"} plan_cycle={5} plan_daily_earning={410} plan_amount={1000} plan_type={'Short Plan'} />
                             </span>
                             )}
 
                         { (userDetails.boughtLong < 1 || amountDetails.plan_state[8] === 0) ?
                             (<span className='pointer-events-none'>
-                                <Card product_type={"short"} product_image={img3} handleClick={handleClick} plan_name={"Wikiwandballoon 9"} plan_cycle={5} plan_daily_earning={1000} plan_amount={2500} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={p3} handleClick={handleClick} plan_name={"Boeing Space 9"} plan_cycle={5} plan_daily_earning={1000} plan_amount={2500} plan_type={'Short Plan'} />
                             </span>) :
                             (<span className=''>
-                                <Card product_type={"short"} product_image={img3} handleClick={handleClick} plan_name={"Wikiwandballoon 9"} plan_cycle={5} plan_daily_earning={1000} plan_amount={2500} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={p3} handleClick={handleClick} plan_name={"Boeing Space 9"} plan_cycle={5} plan_daily_earning={1000} plan_amount={2500} plan_type={'Short Plan'} />
                             </span>
                             )}
 
                         {(userDetails.boughtLong < 1 || amountDetails.plan_state[9] === 0) ?
                             (<span className='pointer-events-none'>
-                                <Card product_type={"short"} product_image={img4} handleClick={handleClick} plan_name={"Wikiwandballoon 10"} plan_cycle={5} plan_daily_earning={4000} plan_amount={7000} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={p4} handleClick={handleClick} plan_name={"Boeing Space 10"} plan_cycle={5} plan_daily_earning={4000} plan_amount={7000} plan_type={'Short Plan'} />
                             </span>) :
                             (<span className=''>
-                                <Card product_type={"short"} product_image={img4} handleClick={handleClick} plan_name={"Wikiwandballoon 10"} plan_cycle={5} plan_daily_earning={4000} plan_amount={7000} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={p4} handleClick={handleClick} plan_name={"Boeing Space 10"} plan_cycle={5} plan_daily_earning={4000} plan_amount={7000} plan_type={'Short Plan'} />
                             </span>
                             )}
 

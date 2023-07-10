@@ -48,9 +48,16 @@ import img3 from '../images/assets/img3.jpg';
 import img4 from '../images/assets/img4.jpg';
 import img5 from '../images/assets/img5.jpg';
 import img6 from '../images/assets/img6.jpg';
-
 import logo_wiki from '../images/assets/logo.png';
-
+import boeing_logo from '../images/boing_space/boeing_logo.png';
+import invite_rewards from '../images/boing_space/invite_rewards.jpg';
+import p1 from '../images/boing_space/p1.jpg';
+import p2 from '../images/boing_space/p2.jpg';
+import p3 from '../images/boing_space/p3.jpg';
+import p4 from '../images/boing_space/p4.jpg';
+import p5 from '../images/boing_space/p5.jpg';
+import p6 from '../images/boing_space/p6.jpg';
+import p7 from '../images/boing_space/p7.jpg';
 
 
 const customStyles = {
@@ -218,19 +225,19 @@ const Home = () => {
                 </div>
             </div> : null}
 
-            <div className='bg-[#fafff9] py-3 shadow-lg px-3 flex justify-between items-center'>
+            <div className='bg-[#fafff9] py-1 shadow-lg px-3 flex justify-between items-center'>
                 <div className='font-semibold'>
-                    <img src={logo_wiki} className="w-24 h-6" alt="logo" />
+                    <img src={boeing_logo} className="w-auto h-10" alt="logo" />
                 </div>
 
             </div>
             {/* <Slider /> */}
             <div className="box  relative  shadow-xl mx-4 mt-5" onClick={() => navigate('/invite')}>
-                <img src={refer} alt="invite_image" className='rounded-xl' />
-                <div className='flex flex-col  absolute top-1 left-2 m-1'>
+                <img src={invite_rewards} alt="invite_image" className='rounded-xl h-[130px]' />
+                {/* <div className='flex flex-col  absolute top-1 left-2 m-1'>
                     <div className='text-2xl font-extrabold text-white'>Invite friends to make money together</div>
                     <div className='text-center shadow-xl px-4 py-1 rounded-full text-white text-xl font-extrabold button_bg'>Implement friends right away</div>
-                </div>
+                </div> */}
             </div>
             <div>
                 <ReactModal
@@ -259,9 +266,9 @@ const Home = () => {
                         <div className='flex gap-2 flex-col bg-white w-full text-blue-500 rounded-md'>
                             <div className='bg-vlt text-center p-1 text-lg shadow-md text-white'>Notice</div>
                             <div className='flex flex-col p-2 text-gray-600 text-xs gap-2 font-bold'>
-                                <div>Welcome to Wikiwandballoon investment Platform</div>
-                                <div>Let  Wikiwandballoon create unlimited wealth with you.</div>
-                                <div>The  Wikiwandballoon app is officialy launched, let us walk together on the road to wealth.</div>
+                                <div>Welcome to Boeing Space investment Platform</div>
+                                <div>Let  Boeing Space create unlimited wealth with you.</div>
+                                <div>The  Boeing Space app is officialy launched, let us walk together on the road to wealth.</div>
                                 <div>Invest 300 &#8377; Earn 45 &#8377; Daily</div>
                                 <div>Invest 700 &#8377; Earn 135 &#8377; Daily</div>
                                 <div>Invest 1500 &#8377; Earn 270 &#8377; Daily</div>
@@ -301,61 +308,61 @@ const Home = () => {
                     <div className='grid grid-cols-1 gap-1'>
                         {userDetails && (amountDetails.plan_state[0] === 0) ? (
                             <span className='pointer-events-none'>
-                                <Card product_type={"long"} product_image={img1} handleClick={handleClick} plan_name={"Wikiwandballoon 1"} plan_cycle={60} plan_daily_earning={45} plan_amount={300} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p1} handleClick={handleClick} plan_name={"Boeing Space 1"} plan_cycle={60} plan_daily_earning={45} plan_amount={300} plan_type={'Big Plan'} />
                             </span>
                         ) : (
                             <span>
-                                <Card product_type={"long"} product_image={img1} handleClick={handleClick} plan_name={"Wikiwandballoon 1"} plan_cycle={60} plan_daily_earning={45} plan_amount={300} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p1} handleClick={handleClick} plan_name={"Boeing Space 1"} plan_cycle={60} plan_daily_earning={45} plan_amount={300} plan_type={'Big Plan'} />
                             </span>
                         )}
 
                         {userDetails && (amountDetails.plan_state[1] === 0) ? (
                             <span className='pointer-events-none'>
-                                <Card product_type={"long"} product_image={img2} handleClick={handleClick} plan_name={"Wikiwandballoon 2"} plan_cycle={60} plan_daily_earning={135} plan_amount={700} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p2} handleClick={handleClick} plan_name={"Boeing Space 2"} plan_cycle={60} plan_daily_earning={135} plan_amount={700} plan_type={'Big Plan'} />
                             </span>
                         ) : (
                             <span>
-                                <Card product_type={"long"} product_image={img2} handleClick={handleClick} plan_name={"Wikiwandballoon 2"} plan_cycle={60} plan_daily_earning={135} plan_amount={700} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p2} handleClick={handleClick} plan_name={"Boeing Space 2"} plan_cycle={60} plan_daily_earning={135} plan_amount={700} plan_type={'Big Plan'} />
                             </span>
                         )}
 
                         {userDetails && (amountDetails.plan_state[2] === 0) ? (
                             <span className='pointer-events-none'>
-                                <Card product_type={"long"} product_image={img3} handleClick={handleClick} plan_name={"Wikiwandballoon 3"} plan_cycle={60} plan_daily_earning={270} plan_amount={1500} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p3} handleClick={handleClick} plan_name={"Boeing Space 3"} plan_cycle={60} plan_daily_earning={270} plan_amount={1500} plan_type={'Big Plan'} />
                             </span>
                         ) : (
                             <span>
-                                <Card product_type={"long"} product_image={img3} handleClick={handleClick} plan_name={"Wikiwandballoon 3"} plan_cycle={60} plan_daily_earning={270} plan_amount={1500} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p3} handleClick={handleClick} plan_name={"Boeing Space 3"} plan_cycle={60} plan_daily_earning={270} plan_amount={1500} plan_type={'Big Plan'} />
                             </span>
                         )}
 
                         {userDetails && (amountDetails.plan_state[3] === 0) ? (
                             <span className='pointer-events-none'>
-                                <Card product_type={"long"} product_image={img4} handleClick={handleClick} plan_name={"Wikiwandballoon 4"} plan_cycle={30} plan_daily_earning={605} plan_amount={3500} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p4} handleClick={handleClick} plan_name={"Boeing Space 4"} plan_cycle={30} plan_daily_earning={605} plan_amount={3500} plan_type={'Big Plan'} />
                             </span>
                         ) : (
                             <span>
-                                <Card product_type={"long"} product_image={img4} handleClick={handleClick} plan_name={"Wikiwandballoon 4"} plan_cycle={30} plan_daily_earning={605} plan_amount={3500} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p4} handleClick={handleClick} plan_name={"Boeing Space 4"} plan_cycle={30} plan_daily_earning={605} plan_amount={3500} plan_type={'Big Plan'} />
                             </span>
                         )}
 
                         {userDetails && (amountDetails.plan_state[4] === 0) ? (
                             <span className='pointer-events-none'>
-                                <Card product_type={"long"} product_image={img5} handleClick={handleClick} plan_name={"Wikiwandballoon 5"} plan_cycle={30} plan_daily_earning={1230} plan_amount={7000} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p5} handleClick={handleClick} plan_name={"Boeing Space 5"} plan_cycle={30} plan_daily_earning={1230} plan_amount={7000} plan_type={'Big Plan'} />
                             </span>
                         ) : (
                             <span>
-                                <Card product_type={"long"} product_image={img5} handleClick={handleClick} plan_name={"Wikiwandballoon 5"} plan_cycle={30} plan_daily_earning={1230} plan_amount={7000} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p5} handleClick={handleClick} plan_name={"Boeing Space 5"} plan_cycle={30} plan_daily_earning={1230} plan_amount={7000} plan_type={'Big Plan'} />
                             </span>
                         )}
 
                         {userDetails && (amountDetails.plan_state[5] === 0) ? (
                             <span className='pointer-events-none'>
-                                <Card product_type={"long"} product_image={img6} handleClick={handleClick} plan_name={"Wikiwandballoon 6"} plan_cycle={30} plan_daily_earning={2000} plan_amount={9500} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p6} handleClick={handleClick} plan_name={"Boeing Space 6"} plan_cycle={30} plan_daily_earning={2000} plan_amount={9500} plan_type={'Big Plan'} />
                             </span>
                         ) : (
                             <span>
-                                <Card product_type={"long"} product_image={img6} handleClick={handleClick} plan_name={"Wikiwandballoon 6"} plan_cycle={30} plan_daily_earning={2000} plan_amount={9500} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p6} handleClick={handleClick} plan_name={"Boeing Space 6"} plan_cycle={30} plan_daily_earning={2000} plan_amount={9500} plan_type={'Big Plan'} />
                             </span>
                         )}
 
