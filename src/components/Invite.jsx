@@ -45,24 +45,61 @@ const Invite = () => {
 
     if (loading || userDetails === null) {
         return (
-            <div className='h-screen grid place-items-center'>
-                <div>Loading...</div>
+            <div className=' bg-vlt h-[1000px] flex flex-col text-white font-light p-5 relative'>
+
+                <div className="top p-3 cursor-pointer flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" onClick={() => navigate(-1)} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4  storke-white  cursor-pointer">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                    <span className='ml-1'>back</span>
+                </div>
+
+                <div className="info p-3 sm:text-xs md:text-md flex flex-col gap-2 rounded-lg bg-white text-vlt font-bold mt-5">
+                    <div className='text-center text-lg border-b border-vlt'>Agent Rewards</div>
+                    Level 1, %
+                    <br />
+                    Level 2, %
+                    <br />
+                    Level 3, %
+                </div>
+
+                <div className="flex gap-2">
+
+                    <div className="info w-1/2 p-3 sm:text-xs md:text-md flex flex-col gap-2 rounded-lg bg-white text-vlt font-bold mt-5">
+                        <div className='font-bold'>Invitation Link</div>
+                        <div className='p-3 rounded-md border overflow-hidden border-vlt'>{``}</div>
+                        <CopyToClipboard text={``} onCopy={() => toaster('Copied to clipboard')}>
+                            <span className='mx-auto bg-vlt text-white p-2 rounded-md'>Copy Link</span>
+                        </CopyToClipboard>
+                    </div>
+
+                    <div className="info w-1/2 p-3 sm:text-xs md:text-md flex flex-col gap-2 rounded-lg bg-white text-vlt font-bold mt-5">
+                        <div className='font-bold'>Invitation code</div>
+                        <div className='p-3 rounded-md border border-vlt'>{''}</div>
+                        <CopyToClipboard text={''} onCopy={() => toaster('Copied to clipboard')}>
+                            <span className='mx-auto bg-vlt text-white p-2 rounded-md'>Copy code</span>
+                        </CopyToClipboard>
+                    </div>
+                </div>
+
+
+
             </div>
         )
     }
     //[#2e9afe]
     return (
-        <div className=' bg-blue-500 h-[1000px] flex flex-col text-white font-light p-5 relative'>
+        <div className=' bg-vlt h-[1000px] flex flex-col text-white font-light p-5 relative'>
             {toasterShow ? <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 <div className='flex gap-2 bg-black opacity-80 text-white px-2 py-1 rounded-md'>
                     <div>{toasterText}</div>
                 </div>
             </div> : null}
             <div className="top p-3 cursor-pointer flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" onClick={() => navigate(-1)} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4  storke-white  cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" onClick={() => navigate(-1)} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4  storke-white  cursor-pointer">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
-            <span className='ml-1'>back</span>
+                <span className='ml-1'>back</span>
             </div>
 
             <div className="info p-3 sm:text-xs md:text-md flex flex-col gap-2 rounded-lg bg-white text-vlt font-bold mt-5">
