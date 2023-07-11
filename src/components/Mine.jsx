@@ -127,7 +127,7 @@ const Mine = () => {
           </div>
         </div>
 
-        <div className="box   relative  shadow-xl mx-4 mt-20" >
+        <div className="box relative  shadow-xl mx-4 mt-20" >
           <img src={invite_rewards} alt="invite_image" className='rounded-xl w-full h-[140px]' />
           {/* <div className='flex flex-col gap-5 absolute top-5 left-5 justify-around'>
             <div className='text-2xl font-extrabold text-white'>Invite friends to make money</div>
@@ -328,7 +328,7 @@ const Mine = () => {
 
             <div className='flex gap-4 text-white'>
               <div className='rounded-full text-center px-4 py-1 bg-vlt w-32 shadow-lg' onClick={() => navigate('/recharge')}>Recharge</div>
-              {isBetween() === false ? (
+              {isBetween() === false && false ? (
                 <div className='bg-vlt text-center rounded-full px-4 py-1 w-32 shadow-lg' onClick={() => toaster('You can withdraw only between 9:00 to 19:00 hours only.')}>Withdraw</div>
               ) : (
                 <div className='bg-vlt text-center rounded-full px-4 py-1 w-32 shadow-lg' onClick={() => navigate('/withdrawal', { state: { withdrawalPassword: originalwpwd, loginPassword: originalpwd } })}>Withdraw</div>
@@ -337,7 +337,7 @@ const Mine = () => {
           </div>
         </div>
 
-        <div className="box   relative  shadow-xl mx-4 mt-20" onClick={()=>navigate('/invite')}>
+        <div className="box     shadow-xl mx-4 mt-20" onClick={()=>navigate('/invite')}>
           <img src={invite_rewards} alt="invite_image" className='rounded-xl w-full h-[140px]' />
           {/* <div className='flex flex-col gap-5 absolute top-5 left-5 justify-around'>
             <div className='text-2xl font-extrabold text-white'>Invite friends to make money</div>

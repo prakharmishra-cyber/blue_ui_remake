@@ -113,7 +113,7 @@ const Invite = () => {
                 <div className="info w-1/2 p-3 sm:text-xs md:text-md flex flex-col gap-2 rounded-lg bg-white text-vlt font-bold mt-5">
                     <div className='font-bold'>Invitation Link</div>
                     <div className='p-3 rounded-md border overflow-hidden border-vlt'>{`https://www.boingspce.website/register/invite_code/${userDetails.user_invite}`}</div>
-                    <CopyToClipboard text={`https://www.boingspce.website/register/invite_code/${userDetails.user_invite}`} onCopy={() => toaster('Copied to clipboard')}>
+                    <CopyToClipboard text={`https://www.boingspce.website/register/invite_code/${userDetails.user_invite}`} onCopy={() => toaster('copy success')}>
                         <span className='mx-auto bg-vlt text-white p-2 rounded-md'>Copy Link</span>
                     </CopyToClipboard>
                 </div>
@@ -121,7 +121,7 @@ const Invite = () => {
                 <div className="info w-1/2 p-3 sm:text-xs md:text-md flex flex-col gap-2 rounded-lg bg-white text-vlt font-bold mt-5">
                     <div className='font-bold'>Invitation code</div>
                     <div className='p-3 rounded-md border border-vlt'>{userDetails.user_invite}</div>
-                    <CopyToClipboard text={userDetails.user_invite} onCopy={() => toaster('Copied to clipboard')}>
+                    <CopyToClipboard text={userDetails.user_invite} onCopy={() => toaster('copy success')}>
                         <span className='mx-auto bg-vlt text-white p-2 rounded-md'>Copy code</span>
                     </CopyToClipboard>
                 </div>

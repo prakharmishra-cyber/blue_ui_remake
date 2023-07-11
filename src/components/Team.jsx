@@ -106,7 +106,7 @@ const Team = () => {
                     </svg>
 
                   </div>
-                  <div>+91 {element.mobno}</div>
+                  <div>+91 {element.mobno.substr(0,3)+"****"+element.mobno.substr(7)}</div>
                   <div>&#8377; {Math.floor((element.recharge_amount)*(amountDetails.level1_percent/100))}</div>
                 </div>
               )
@@ -130,7 +130,7 @@ const Team = () => {
                     </svg>
 
                   </div>
-                  <div>+91 {element.mobno}</div>
+                  <div>+91 {element.mobno.substr(0,3)+"****"+element.mobno.substr(7)}</div>
                   <div>&#8377; {Math.floor((element.recharge_amount)*(amountDetails.level2_percent/100))}</div>
                 </div>
               )
@@ -154,7 +154,7 @@ const Team = () => {
                     </svg>
 
                   </div>
-                  <div>+91 {element.mobno}</div>
+                  <div>+91 {element.mobno.substr(0,3)+"****"+element.mobno.substr(7)}</div>
                   <div>&#8377; {Math.floor((element.recharge_amount)*(amountDetails.level3_percent/100))}</div>
                 </div>
               )

@@ -49,31 +49,31 @@ const Withdrawal = () => {
     const [toasterText, setToasterText] = useState('');
     const [modalIsOpen, setIsOpen] = useState(false);
 
-    const toaster = (text, arg='') => {
+    const toaster = (text, arg = '') => {
         setToasterText(text);
         setToasterShow(true);
-        setTimeout(()=>{
+        setTimeout(() => {
             setToasterShow(false);
-            if(arg==='/record') {
+            if (arg === '/record') {
                 setIsOpen(false);
                 navigate('/record');
             }
-            if(arg==='/bank') {
+            if (arg === '/bank') {
                 navigate('/bank', { state: { withdrawalPassword: loc.state.withdrawalPassword, loginPassword: loc.state.loginPassword } });
             }
-        },2000);
+        }, 2000);
     }
 
     useEffect(() => {
         const getDetails = async () => {
-            const docRef = await axios.post(`${BASE_URL}/get_user`, {user_id: localStorage.getItem('uid')}).then(({data})=>data);
+            const docRef = await axios.post(`${BASE_URL}/get_user`, { user_id: localStorage.getItem('uid') }).then(({ data }) => data);
             if (docRef) {
-                if (docRef.bank_details.bankAccount.length===0) {
+                if (docRef.bank_details.bankAccount.length === 0) {
                     toaster('Fill bank details first!', '/bank');
                 } else {
 
                     setDetails(docRef.bank_details);
-                    console.log("doccccc",docRef.bank_details)
+                    console.log("doccccc", docRef.bank_details)
                     docRef.balance ? setBalance(docRef.balance) : setBalance(0);
                     setDiffDays(DateDifference(new Date(docRef.lastWithdrawal), new Date()));
                 }
@@ -82,7 +82,7 @@ const Withdrawal = () => {
             }
         }
         getDetails();
-        
+
     }, []);
 
 
@@ -120,14 +120,14 @@ const Withdrawal = () => {
 
         if (wpassword === loc.state.withdrawalPassword && otp === otpfield) {
             try {
-                const docRef1 = await axios.post(`${BASE_URL}/place_withdrawal`, { 
-                    withdrawalAmount: (Number(wamount)), 
-                    ...details, 
-                    afterDeduction: (Number(wamount) - (Number(amountDetails.withdrawal_fee) * Number(wamount) / 100)), 
-                    user_id: localStorage.getItem('uid'), 
-                    time:new Date(),
+                const docRef1 = await axios.post(`${BASE_URL}/place_withdrawal`, {
+                    withdrawalAmount: (Number(wamount)),
+                    ...details,
+                    afterDeduction: (Number(wamount) - (Number(amountDetails.withdrawal_fee) * Number(wamount) / 100)),
+                    user_id: localStorage.getItem('uid'),
+                    time: new Date(),
                     balance: balance,
-                    status: 'pending' 
+                    status: 'pending'
                 });
                 toaster('Withdrawal request placed successfully!', '/record');
                 //navigate('/record');
@@ -162,14 +162,36 @@ const Withdrawal = () => {
     const handleLastButton = () => {
         openModal();
     }
+
+    const isBetween = () => {
+        var startTime = '9:00:00';
+        var endTime = '19:00:00';
+
+        var currentDate = new Date()
+
+        var startDate = new Date(currentDate.getTime());
+        startDate.setHours(startTime.split(":")[0]);
+        startDate.setMinutes(startTime.split(":")[1]);
+        startDate.setSeconds(startTime.split(":")[2]);
+
+        var endDate = new Date(currentDate.getTime());
+        endDate.setHours(endTime.split(":")[0]);
+        endDate.setMinutes(endTime.split(":")[1]);
+        endDate.setSeconds(endTime.split(":")[2]);
+
+
+        var valid = startDate < currentDate && endDate > currentDate;
+        //console.log(valid);
+        return valid;
+    }
     //[#2e9afe]
     return (
         <div className='bg-white flex flex-col sm:h-[1000px] md:h-[950px] relative'>
-            {toasterShow?<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+            {toasterShow ? <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 <div className='flex gap-2 bg-black opacity-80 text-white px-2 py-1 rounded-md'>
                     <div>{toasterText}</div>
                 </div>
-            </div>:null}
+            </div> : null}
             <div>
                 <ReactModal
                     isOpen={modalIsOpen}
@@ -186,8 +208,8 @@ const Withdrawal = () => {
                 </ReactModal>
             </div>
             <div className="options bg-vlt flex text-center text-white text-md shadow-lg p-3 font-medium">
-                <svg xmlns="http://www.w3.org/2000/svg" onClick={() => navigate('/home')} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" 
-                className="w-5 h-5   storke-white cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" onClick={() => navigate('/home')} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
+                    className="w-5 h-5   storke-white cursor-pointer">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
                 </svg>
                 <div className='flex-grow text-center'>Withdrawal</div>
@@ -196,14 +218,14 @@ const Withdrawal = () => {
             <div className="part1 p-3 mx-3 mt-5">
                 <div className='text-md text-vlt font-semibold'>Withdrawal Amount</div>
                 <div className='flex w-full pt-4'>
-                    <div className="value flex items-center py-1 px-2 bg-[#d3d6fe] rounded-lg"> 
-                        <input type="number" id="withdrawal_field" onChange={handleWithdrawalAmount} 
-                        className='text-xl outline-none bg-[#d3d6fe]' placeholder='Amount' />
+                    <div className="value flex items-center py-1 px-2 bg-[#d3d6fe] rounded-lg">
+                        <input type="number" id="withdrawal_field" onChange={handleWithdrawalAmount}
+                            className='text-xl outline-none bg-[#d3d6fe]' placeholder='Amount' />
                         <div className='text-vlt font-semibold'>INR</div>
                     </div>
                 </div>
                 <div className='flex items-center mt-4 justify-start gap-6 my-1'>
-                    <div className="balance text-[#9fa1a0] text-sm">Available Balance &#8377; {balance}</div>
+                    <div className="balance text-[#9fa1a0] text-sm">Available Balance &#8377; {Math.floor(balance)}</div>
                     <div onClick={handleWithdrawalAll} className="withdraw text-[#12a5b7] text-sm cursor-pointer">All</div>
                 </div>
                 <div className='text-[#9fa1a0] text-sm my-1 inline'>Fee <span className='ml-10'>{amountDetails.withdrawal_fee}% | Rs.{(Number(wamount) - (Number(amountDetails.withdrawal_fee) * Number(wamount) / 100))}</span></div>
@@ -234,15 +256,15 @@ const Withdrawal = () => {
 
                 <div className="balance flex flex-col gap-2 text-md p-2">
                     <div className="phoneno text-vlt font-semibold text-sm">Withdrawal Password:</div>
-                    <input type="password" onChange={e => setWpassword(e.target.value)} placeholder='Enter Password' 
-                    className='text-gray-400 bg-[#e0e5e1] text-sm py-2 px-2 rounded-lg' />
+                    <input type="password" onChange={e => setWpassword(e.target.value)} placeholder='Enter Password'
+                        className='text-gray-400 bg-[#e0e5e1] text-sm py-2 px-2 rounded-lg' />
                 </div>
 
                 <div className="balance flex flex-col gap-2 text-md p-2">
                     <div className="phoneno text-vlt font-semibold text-sm">OTP:</div>
                     <div className='flex gap-1'>
-                        <input type="password" onChange={e => setOtp(e.target.value)} placeholder='Enter OTP' 
-                        className='text-gray-400 bg-[#e0e5e1] text-sm py-2 px-2 rounded-lg flex-grow' />
+                        <input type="password" onChange={e => setOtp(e.target.value)} placeholder='Enter OTP'
+                            className='text-gray-400 bg-[#e0e5e1] text-sm py-2 px-2 rounded-lg flex-grow' />
                         <div className='text-sm bg-vlt rounded-lg font-semibold text-white px-3 py-1 hover:cursor-pointer' onClick={() => handleOTPSend(String(Math.floor(100000 + Math.random() * 900000)))}>Send OTP</div>
                     </div>
                 </div>
@@ -255,8 +277,11 @@ const Withdrawal = () => {
             </div>
             {/* [#2e9afe] */}
             <div className='mx-2'>
-                <button onClick={handleLastButton} 
-                className='bg-vlt text-white text-md mt-5 mb-20 rounded-lg shadow-md block w-full py-2 shadow-[#12a5b7]'>Confirm</button>
+                {
+                    isBetween() === false ? <button onClick={() => toaster('You can withdraw only between 9:00 to 19:00 hours only.')} className='bg-vlt text-white text-md mt-5 mb-20 rounded-lg shadow-md block w-full py-2 shadow-[#12a5b7]'>Confirm</button>
+                    : <button onClick={handleLastButton} className='bg-vlt text-white text-md mt-5 mb-20 rounded-lg shadow-md block w-full py-2 shadow-[#12a5b7]'>Confirm</button>
+                }
+                
             </div>
         </div>
     )

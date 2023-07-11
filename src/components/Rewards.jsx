@@ -18,7 +18,7 @@ const Rewards = () => {
     const [isloading, setIsloading] = useState(true);
     const navigate = useNavigate();
 
-    const site_url = 'https://www.windharvester44.online/register/invite_code/' + localStorage.getItem('user_invite');
+    const site_url = 'https://www.boingspce.website/register/invite_code/' + localStorage.getItem('user_invite');
 
     const toaster = (text) => {
         setToasterText(text);

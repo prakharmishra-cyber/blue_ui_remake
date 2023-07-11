@@ -87,11 +87,11 @@ const Login = () => {
     return (
         <div  className='relative   bg-white '>
             {toasterShow?<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                <div className='flex gap-2 bg-black opacity-80 text-white px-2 py-1 rounded-md'>
+                <div className='flex gap-2 bg-black opacity-70 text-white px-2 py-1 rounded-md'>
                     <div>{toasterText}</div>
                 </div>
             </div>:null}
-            {loading ? <div className='flex gap-2 bg-black text-white py-2 px-2  rounded-md opacity-70 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+            {loading ? <div className='flex gap-2 items-center justify-center bg-black text-white py-[10px] px-4  rounded-[4px] opacity-70 absolute top-1/2 left-1/2 transform mt-[60px] -translate-x-1/2 -translate-y-1/2'>
                 {text==='Loading' ? <div>
                     <RotatingLines strokeColor='white' width='20' />
                 </div> : null}
