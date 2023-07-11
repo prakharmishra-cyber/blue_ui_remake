@@ -270,11 +270,11 @@ const Home = () => {
                                 <div>Welcome to Boeing Space investment Platform</div>
                                 <div>Let  Boeing Space create unlimited wealth with you.</div>
                                 <div>The  Boeing Space app is officialy launched, let us walk together on the road to wealth.</div>
-                                <div>Invest 300 &#8377; Earn 45 &#8377; Daily</div>
-                                <div>Invest 700 &#8377; Earn 135 &#8377; Daily</div>
-                                <div>Invest 1500 &#8377; Earn 270 &#8377; Daily</div>
-                                <div>Invest 3500 &#8377; Earn 605 &#8377; Daily</div>
-                                <div>Invest 7000 &#8377; Earn 12300 &#8377; Daily</div>
+                                <div>Invest 0 &#8377; Earn 20 &#8377; Daily</div>
+                                <div>Invest 480 &#8377; Earn 110 &#8377; Daily</div>
+                                <div>Invest 800 &#8377; Earn 150 &#8377; Daily</div>
+                                <div>Invest 1800 &#8377; Earn 350 &#8377; Daily</div>
+                                <div>Invest 3500 &#8377; Earn 600 &#8377; Daily</div>
                             </div>
                             <div className='text-center text-gray-600 font-semibold p-2 border-t border-gray-600'
                                 onClick={(e) => {
