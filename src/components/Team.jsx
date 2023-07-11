@@ -39,9 +39,30 @@ const Team = () => {
 
   if (loading || userDetails === null) {
     return (
-      <div className='h-screen grid place-items-center'>
-        <div>Loading...</div>
+      <div className=''>
+      {/* [#2e9afe] */}
+      <div className="top flex items-center my-auto text-center h-10 p-1 bg-vlt text-white text-lg font-medium">
+        <div className='absolute flex w-32 cursor-pointer' onClick={() => navigate(-1)}>
+          <svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4  storke-white  cursor-pointer">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </div>
+        <div className='flex-grow'>Team</div>
       </div>
+
+      <div className='flex flex-col items-center w-full'>
+        <div className='flex text-vlt font-semibold flex-col items-center w-[90%] border border-gray-300 text-lg p-3 m-3 shadow-lg shadow-vlt rounded-lg'>
+          <div>Total Member:0</div>
+          <div>Total Team Commission: &#8377;{0}</div>
+        </div>
+
+        <div className="flex items-center  w-[90%]">
+          <div className='p-3 text-center text-lg w-1/3 rounded-t-lg border border-gray-300 shadow-vlt shadow-lg text-vlt'>Level 1</div>
+          <div className='p-3 text-center text-lg w-1/3 rounded-t-lg border border-gray-300 shadow-vlt shadow-lg text-vlt'>Level 2</div>
+          <div className='p-3 text-center text-lg w-1/3 rounded-t-lg border border-gray-300 shadow-vlt shadow-lg text-vlt'>Level 3</div>
+        </div>
+      </div>
+    </div>
     )
   }
 

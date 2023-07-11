@@ -48,15 +48,15 @@ const Project = () => {
                     var earn = 0;
                     var ia = 0, ai = 0, ti = 0;
                     var temp = document.plans_purchased.map((element) => {
-                        ia+=element.plan_amount;
+                        ia += element.plan_amount;
 
                         var days = DateDifference(new Date(element.date_till_rewarded), new Date(Math.min(new Date(), addDays(new Date(element.date_purchased), element.plan_cycle))));
                         var days2 = DateDifference(new Date(element.date_till_rewarded), addDays(new Date(element.date_purchased), element.plan_cycle));
                         //console.log(days);
                         if (element.product_type === 'short') {
                             if (days === element.plan_cycle) {
-                                ti+=element.plan_daily_earning;
-                                ai+= (days * element.quantity * element.plan_daily_earning);
+                                ti += element.plan_daily_earning;
+                                ai += (days * element.quantity * element.plan_daily_earning);
                                 earn = (days * element.quantity * element.plan_daily_earning);
                                 return {
                                     ...element,
@@ -74,10 +74,10 @@ const Project = () => {
                                 ...element
                             }
                         }
-                        if((DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)))>=1) {
-                            ti+=element.plan_daily_earning;
+                        if ((DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded))) >= 1) {
+                            ti += element.plan_daily_earning;
                         }
-                        ai+= DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)) * element.quantity * element.plan_daily_earning;
+                        ai += DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)) * element.quantity * element.plan_daily_earning;
                         //console.log(ai);
                         earn = earn + (days * element.quantity * element.plan_daily_earning);
                         return {
@@ -119,16 +119,33 @@ const Project = () => {
 
     if (loading) {
         return (
-            <div className="grid place-items-center h-screen ">
-                <div className='flex flex-col justify-center items-center'>
-                    <RotatingLines
-                        strokeColor="grey"
-                        strokeWidth="2"
-                        animationDuration="0.75"
-                        width="40"
-                        visible={true}
-                    />
-                    <div className='text-lg text-gray-500'>Loading...</div>
+            <div className='md:h-screen  xs:h-[700px]  h-screen relative'>
+                
+
+                <div className="">
+                    {/* <svg xmlns="http://www.w3.org/2000/svg" onClick={() => navigate(-1)} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4  storke-white  cursor-pointer">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+                </svg> */}
+                    <div className='flex-grow text-white text-center text-sm bg-[#000084] py-2'>Project Record</div>
+                </div>
+
+                {/* This is the curved part */}
+                <div className="flex flex-col mine_image1 items-center text-white h-56 -translate-y-[1px] p-5">
+
+                    <div className='flex flex-col items-center w-full gap-1'>
+                        <div className='text-3xl'>&#8377; {0}</div>
+                        <div className='text-xs font-light'>Today's estimated income</div>
+                    </div>
+                    <div className='flex flex-col gap-3 w-full mt-3 p-3 text-sm'>
+                        <div className='flex justify-between'>
+                            <div className='font-light'>Investment amount</div>
+                            <div className='font-bold'>&#8377; {0}</div>
+                        </div>
+                        <div className='flex justify-between'>
+                            <div className='font-light'>Accumulated income</div>
+                            <div className='font-bold'>&#8377; {0}</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
@@ -200,7 +217,7 @@ const Project = () => {
 
             <div className=' mx-auto w-full mt-2 pb-10'>
                 {
-                     userDetails && ('plans_purchased' in userDetails) && (
+                    userDetails && ('plans_purchased' in userDetails) && (
                         userDetails.plans_purchased.map((element, index) => {
                             if (element.plan_daily_earning * element.plan_cycle !== DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)) * element.quantity * element.plan_daily_earning) {
                                 return (
@@ -233,7 +250,7 @@ const Project = () => {
 
             <div className=' mx-auto w-full mt-2 pb-10'>
                 {
-                     userDetails && ('plans_purchased' in userDetails) && (
+                    userDetails && ('plans_purchased' in userDetails) && (
                         userDetails.plans_purchased.map((element, index) => {
                             if (!(element.plan_daily_earning * element.plan_cycle !== DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)) * element.quantity * element.plan_daily_earning)) {
                                 return (

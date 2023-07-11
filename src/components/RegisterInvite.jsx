@@ -64,10 +64,10 @@ const Register = () => {
             return;
         }
 
-        if (otp !== otpfield) {
-            toaster('Wrong OTP entered!');
-            return;
-        }
+        // if (otp !== otpfield) {
+        //     toaster('Wrong OTP entered!');
+        //     return;
+        // }
         //console.log({ mobno, pwd, cpwd, wpwd, invt });
         setLoading(true);
         await axios.post(`${BASE_URL}/register`,{mobno, pwd, wpwd, invt})
@@ -135,7 +135,7 @@ const Register = () => {
                             className=' w-5/6 outline-none overflow-x-scroll placeholder:font-semibold' placeholder='Please enter a valid phone number' name="phoneno" id="phoneno" />
                     </div>
                 </div>
-                <div className='outline-none flex flex-col mb-2 px-2'>
+                {/* <div className='outline-none flex flex-col mb-2 px-2'>
                     <div className="flex gap-2">
                         <VerifiedUserOutlined style={{ color: 'gray' }} />
                         <div className='text-gray-600'>Verification Code</div>
@@ -148,7 +148,7 @@ const Register = () => {
                         <button className='bg-vlt text-white text-xs px-4 mt-2  rounded-md' onClick={() => handleOTPSend(String(Math.floor(100000 + Math.random() * 900000)))}>Send</button>
                     </div>
 
-                </div>
+                </div> */}
                 <div className='outline-none flex flex-col mb-2  px-2'>
                     <div className='flex gap-2'>
                         <LockOutlined style={{ color: 'gray' }} />
