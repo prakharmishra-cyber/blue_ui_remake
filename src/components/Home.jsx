@@ -319,11 +319,11 @@ const Home = () => {
 
                         {userDetails && (amountDetails.plan_state[1] === 0) ? (
                             <span className='pointer-events-none'>
-                                <Card product_type={"long"} product_image={p2} handleClick={handleClick} plan_name={"Boeing Space 2"} plan_cycle={60} plan_daily_earning={110} plan_amount={480} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p2} handleClick={handleClick} plan_name={"Boeing Space 2"} plan_cycle={60} plan_daily_earning={90} plan_amount={480} plan_type={'Big Plan'} />
                             </span>
                         ) : (
                             <span>
-                                <Card product_type={"long"} product_image={p2} handleClick={handleClick} plan_name={"Boeing Space 2"} plan_cycle={60} plan_daily_earning={110} plan_amount={480} plan_type={'Big Plan'} />
+                                <Card product_type={"long"} product_image={p2} handleClick={handleClick} plan_name={"Boeing Space 2"} plan_cycle={60} plan_daily_earning={90} plan_amount={480} plan_type={'Big Plan'} />
                             </span>
                         )}
 
