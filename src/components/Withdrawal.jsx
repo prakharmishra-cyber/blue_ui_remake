@@ -92,6 +92,7 @@ const Withdrawal = () => {
 
     const openModal = () => {
         setIsOpen(true);
+        console.log(amountDetails);
     }
 
     const handleWithdrawal = async () => {
@@ -119,10 +120,12 @@ const Withdrawal = () => {
         }
 
         if (wpassword === loc.state.withdrawalPassword && otp === otpfield) {
+            const tempDetails = details;
+            delete tempDetails['_id'];
             try {
                 const docRef1 = await axios.post(`${BASE_URL}/place_withdrawal`, {
                     withdrawalAmount: (Number(wamount)),
-                    ...details,
+                    ...tempDetails,
                     afterDeduction: (Number(wamount) - (Number(amountDetails.withdrawal_fee) * Number(wamount) / 100)),
                     user_id: localStorage.getItem('uid'),
                     time: new Date(),
