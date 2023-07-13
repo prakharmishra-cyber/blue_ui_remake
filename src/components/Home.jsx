@@ -103,6 +103,7 @@ const Home = () => {
     const [originalwpwd, setOriginalwpwd] = useState(null);
     const [originalpwd, setOriginalpwd] = useState(null);
     const [planPurchaseShow, setPlanPurchaseShow] = useState(false);
+    const [firstPlanPurchased, setFirstPlanPurchased] = useState(false);
 
     const toaster = (text, arg = '') => {
         setToasterText(text);
@@ -123,6 +124,8 @@ const Home = () => {
     const getUserDetails = async () => {
         await axios.post(`${BASE_URL}/get_user`, { user_id: localStorage.getItem('uid') }).then(({ data }) => {
             if (data) {
+                const tempPlans = data.plans_purchased.filter((element)=>element.plan_name==='Boeing Space 1');
+                setFirstPlanPurchased(tempPlans.length>0);
                 setUserDetails(data);
                 setOriginalwpwd(data.wpwd);
                 setOriginalpwd(data.pwd);
@@ -142,11 +145,17 @@ const Home = () => {
     useLayoutEffect(() => {
         document.body.style.backgroundColor = "#eaf4eb";
         getUserDetails();
+        
     }, []);
 
     const closeModal = async (action) => {
+        
         if (action === 'cancel') {
             setIsOpen(false);
+        }else if(firstPlanPurchased===true) {
+            setIsOpen(false);
+            toaster('Plan can be only purchased for one time!');
+            console.log('Plan can be only purchased for one time!');
         } else if (quantity <= 0) {
             toaster('Please a positive value!');
         } else {
