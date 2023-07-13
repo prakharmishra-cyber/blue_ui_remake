@@ -92,7 +92,6 @@ const Withdrawal = () => {
 
     const openModal = () => {
         setIsOpen(true);
-        console.log(amountDetails);
     }
 
     const handleWithdrawal = async () => {
@@ -263,14 +262,14 @@ const Withdrawal = () => {
                         className='text-gray-400 bg-[#e0e5e1] text-sm py-2 px-2 rounded-lg' />
                 </div>
 
-                <div className="balance flex flex-col gap-2 text-md p-2">
+                {/* <div className="balance flex flex-col gap-2 text-md p-2">
                     <div className="phoneno text-vlt font-semibold text-sm">OTP:</div>
                     <div className='flex gap-1'>
                         <input type="password" onChange={e => setOtp(e.target.value)} placeholder='Enter OTP'
                             className='text-gray-400 bg-[#e0e5e1] text-sm py-2 px-2 rounded-lg flex-grow' />
                         <div className='text-sm bg-vlt rounded-lg font-semibold text-white px-3 py-1 hover:cursor-pointer' onClick={() => handleOTPSend(String(Math.floor(100000 + Math.random() * 900000)))}>Send OTP</div>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <div className="part1 bg-[#e0e5e1] text-vlt font-semibold shadow-md p-3 rounded-lg mx-3 mt-5 flex flex-col gap-3">
