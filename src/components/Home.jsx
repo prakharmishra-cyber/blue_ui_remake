@@ -152,7 +152,7 @@ const Home = () => {
         
         if (action === 'cancel') {
             setIsOpen(false);
-        }else if(firstPlanPurchased===true) {
+        }else if(firstPlanPurchased===true && currPlan.plan_name==='Boeing Space 1') {
             setIsOpen(false);
             toaster('Plan can be only purchased for one time!');
             console.log('Plan can be only purchased for one time!');
